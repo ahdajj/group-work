@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome To RefuIn</h2>
+    
+    <a href="/post/addnew"><h3>Add a post</h3></a>
+    <div class="post">
+        <% if (posts.length>0){ %>
+            <% posts.forEach(post=>{ %>
+        <div class="card">
+            <h2><%=post.name %></h2>
+            <h6><%= post.message %></h6>
+            <h6><%= post.create_at%></h6>
+            <a href="/post/<%= post._id %>">See More</a>
+        </div>
+            <% }) %>
+        <%} else {%> 
+            <h5>No Post On for Day</h5>
+    
+        <% } %>
+</body>
+</html>
