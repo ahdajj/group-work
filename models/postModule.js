@@ -6,7 +6,6 @@ const postSchema = new Schema ({
     name :{
         type :String,
         required : true,
-        maxlength :15
     },
     post:{
         type:String,
