@@ -9,5 +9,6 @@ app.set("view engine" , "ejs")
 app.use(express.urlencoded({extended:false}))
 
 app.use(route)
+app.use(express.static('public'))
 const port =3500
 app.listen(`${port}` , ()=>console.log(`Localhost : ${port} is --- ON`))

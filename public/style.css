@@ -1,0 +1,11 @@
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+
+    height: 60px;
+}
+body{
+    background-color: rgba(229, 221, 211, 0.514);
+}
