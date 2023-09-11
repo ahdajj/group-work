@@ -1,0 +1,15 @@
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+
+    height: 60px;
+}
+body{
+    margin: 10px;
+    background-color: rgba(229, 221, 211, 0.514);
+}
+h5{
+    text-align: center;
+}

@@ -15,9 +15,19 @@ const homePage =(req,res)=>{
             console.log(err);
         })
 }
-
+const aboutPage =(req,res)=>{
+        res.render("about")
+}
+const signupPage =(req,res)=>{
+    res.render("signup")
+}
+const loginPage =(req,res)=>{
+    res.render("login")
+}
 
 module.exports={
     homePage,
-
+    aboutPage,
+    signupPage,
+    loginPage
 }
