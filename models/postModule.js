@@ -1,17 +1,17 @@
 const moment = require("moment/moment")
 const mongoose = require("mongoose")
-const Schema =mongoose.Schema
 
+const Schema =mongoose.Schema
 const postSchema = new Schema ({
-    name :{
-        type :String,
-        required : true,
-    },
-    post:{
+    body:{
         type:String,
         required:true,
         maxlength :40
-
+    },
+    UserId:{
+        type:mongoose.Types.ObjectId,
+        ref:'Users',
+        required:true
     },
     create_at:{
         type: Date ,
@@ -22,5 +22,5 @@ const postSchema = new Schema ({
     }
 },{timestamps:true}) 
 
-
-module.exports=mongoose.model("Post" , postSchema)
+const Post = mongoose.model("Post" , postSchema)
+module.exports= Post 
