@@ -1,4 +1,4 @@
-const Users = require('../models/userModel')
+const Users = require('../models/userModule')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -12,7 +12,7 @@ const signupUser =(req,res)=>{
     const newUser = new Users(userObj)
     newUser.save()
     .then (()=>{
-        res.redirect('/index')
+        res.redirect('/home')
     })
     .catch(err =>{
         console.log(err)
@@ -35,7 +35,7 @@ const logInUser = (req,res)=>{
                 }
                 let userToken=jwt.sign({tokenData},'this is a random text for jwt sign')
                 res.cookie('jwt', userToken)
-                res.redirect('/index')
+                res.redirect('/home')
             }else{
                 res.render('login' ,{err: 'password is not correct'})
             }
@@ -52,7 +52,7 @@ const logInUser = (req,res)=>{
 
 const logout = (req,res)=>{
     res.clearCookie('jwt');
-    res.redirect('/about')
+    res.redirect('/home')
 }
 
 module.exports = {

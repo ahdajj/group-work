@@ -1,5 +1,5 @@
 const postModel = require("../models/postModule")
-const Users = require('../models/userModel')
+const Users = require('../models/userModule')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -25,7 +25,7 @@ const signupPage =(req,res)=>{
     res.render("signup")
 }
 const loginPage =(req,res)=>{
-    res.render("login")
+    res.render("login" , {err : ''})
 }
 
 const creatPost = (req,res)=>{
@@ -70,5 +70,5 @@ module.exports={
     aboutPage,
     signupPage,
     loginPage,
-    creatpost
+    creatPost
 }
