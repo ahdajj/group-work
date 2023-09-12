@@ -9,6 +9,7 @@ route.get("/home" , postController.homePage)
 route.get("/about" , postController.aboutPage) 
 route.get("/signup", postController.signupPage)
 route.get("/login" , postController.loginPage)
+route.get("/post/addnew" ,userController.userAuth, postController.addPost)
 
 route.post("/signup", userController.signupUser)
 route.post("/login", userController.logInUser)

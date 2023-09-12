@@ -27,6 +27,9 @@ const signupPage =(req,res)=>{
 const loginPage =(req,res)=>{
     res.render("login" , {err : ''})
 }
+const addPost =(req,res)=>{
+    res.render("addNew")
+}
 
 const creatPost = (req,res)=>{
 
@@ -70,5 +73,6 @@ module.exports={
     aboutPage,
     signupPage,
     loginPage,
-    creatPost
+    creatPost,
+    addPost
 }

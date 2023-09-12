@@ -55,8 +55,36 @@ const logout = (req,res)=>{
     res.redirect('/home')
 }
 
+// middleware
+const userAuth = (req ,res , next ) =>{
+    if(req.cookies.jwt){
+      jwt.verify(req.cookies.jwt ,'this is a random text for jwt sign' , function (err , decodedUser){
+          if (err){
+              console.log('issue with verify token',err)
+          } else {
+               res.locals.userId = decodedUser.tokenData.id
+               res.locals.userFulname = decodedUser.tokenData.Name
+               res.locals.userEmail = decodedUser.tokenData.Email
+          }  
+      } )           
+      next()
+    }else {
+      res.redirect('/login')
+    }
+}
+
+const logInAuth = (req ,res , next ) =>{
+    if(req.cookies.jwt){
+          res.redirect('/home')
+    }else {
+        next()
+    }
+  }
+
 module.exports = {
     signupUser,
     logInUser,
-    logout
+    logout,
+    userAuth,
+    logInAuth
 }
