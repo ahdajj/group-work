@@ -16,18 +16,19 @@ const creatComment = (req,res)=>{
         } 
         }) 
 
-    const comment = new Comment({
-        body: req.body.body,
-        PostId:req.params.id,
+    const comment = new commentmModel({
+        body: req.body.comment,
+        PostId:req.params.id
     })
+    console.log(req.params.id)
     comment.save()
     .then((result)=>{
-        Post.findById(req.params.id)
+        postModel.findById(req.params.id)
         .then((Post)=>{
             Post.comment.push(comment._id)
             Post.save()
              .then(()=>{
-                 res.redirect('/comment')
+                 res.redirect('/home')
              })
              .catch((err)=>{
                  console.log(err)

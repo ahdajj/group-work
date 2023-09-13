@@ -13,6 +13,10 @@ const postSchema = new Schema ({
         ref:'Users',
         required:true
     },
+    comment:[{
+        type:mongoose.Types.ObjectId,
+        ref:'Comment'
+    }],
     create_at:{
         type: Date ,
         default :Date.now,
