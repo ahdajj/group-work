@@ -13,11 +13,6 @@ const CommentSchema = new Schema ({
         ref:'Post',
         required:true
     },
-    userId:{
-        type:mongoose.Types.ObjectId,
-        ref:'user',
-        required:true
-      },
     created_at:{
         type: Date ,
         default :Date.now,
