@@ -11,7 +11,8 @@ route.get("/signup",userController.logInAuth, postController.signupPage)
 route.get("/login" ,userController.logInAuth, postController.loginPage)
 route.get("/post/addnew" ,userController.userAuth, postController.addPost)
 route.get("/post/:id" ,userController.userAuth, postController.postDisplay)
-
+route.get('/info', (req,res)=>{res.render('userInfo')})
+route.get('/logout',userController.logout)
 
 route.post("/signup", userController.signupUser)
 route.post("/login", userController.logInUser)

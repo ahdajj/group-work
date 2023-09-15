@@ -51,8 +51,12 @@ const logInUser = (req,res)=>{
 
 
 const logout = (req,res)=>{
+    if(req.cookies.jwt) { 
     res.clearCookie('jwt');
-    res.redirect('/home')
+    res.redirect('/home')}
+    else {
+        res.redirect('/login')
+    }
 }
 
 // middleware
