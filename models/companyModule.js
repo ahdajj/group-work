@@ -6,6 +6,10 @@ const companySchema = new Schema({
         type:String,
         required: true
        },
+       Field:{
+        type:String,
+        required: true
+       },
        Email:{
         type:String,
         required: true
@@ -21,5 +25,5 @@ const companySchema = new Schema({
 
 })
 
-const  User = mongoose.model('Companies', companySchema)
+const  Company = mongoose.model('Companies', companySchema)
 module.exports = Company

@@ -3,6 +3,7 @@ const route = express.Router()
 const postController =require("../controller/postController")
 const commentController =require("../controller/commentController")
 const userController =require("../controller/userController")
+const comapnyController= require("../controller/companyController")
 
 route.get('/', (req,res)=>{res.redirect('/home')})
 route.get("/home" , postController.homePage)
@@ -19,4 +20,6 @@ route.post("/login", userController.logInUser)
 route.post("/addPost", postController.creatPost)
 route.post("/addComment/:id", commentController.creatComment)
 
+route.get("/signup-company",comapnyController.logInAuth, postController.signupPage)
+route.get("/login" ,comapnyController.logInAuth, postController.loginPage)
 module.exports= route
