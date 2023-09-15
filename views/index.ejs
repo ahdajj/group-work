@@ -15,7 +15,7 @@
         <% if (posts.length>0){ %>
             <% posts.forEach(post=>{ %>
         <div class="card">
-            <h2><%= post.UserId.Name %></h2>
+            <h3><%= post.UserId.Name %></h3>
             <p><%= post.body %></p>
             <h6><%= post.create_at%></h6>
             <a href="/post/<%= post._id %>">See More</a>
