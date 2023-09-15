@@ -22,4 +22,4 @@ const companySchema = new Schema({
 })
 
 const  User = mongoose.model('Companies', comapnySchema)
-module.exports = User
+module.exports = Company
