@@ -7,17 +7,18 @@ const jwt = require('jsonwebtoken')
 
 const homePage =(req,res)=>{
     postModel.find()
-        .populate('UserId')
-        .sort({created_at :-1})
-        .then(data =>{
-             //console.log(data[1]);
-            res.render("index",{
-                posts:data
-            })
+    .populate('UserId')
+    .populate('comment')
+    .sort({created_at :-1})
+    .then(data =>{
+         //console.log(data[1]);
+        res.render("index",{
+            posts:data
         })
-        .catch(err=>{
-            console.log(err);
-        })
+    })
+    .catch(err=>{
+        console.log(err);
+    })
 }
 const aboutPage =(req,res)=>{
         res.render("about")
