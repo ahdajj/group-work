@@ -268,4 +268,12 @@ h3 {
 
 body a {
     text-decoration: none;
+    text-align: center;
+}
+.post-input{
+    border: none ;
+    border-radius: 8px;
+    justify-content: center;
+    text-align: center;
+    margin: 5px 0;
 }
