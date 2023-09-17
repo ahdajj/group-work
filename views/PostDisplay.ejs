@@ -11,13 +11,13 @@
 
     <div class="post">
             
-        <div class="card">
+        <div class="post-comment">
             <h6><%= posts.body %></h6>
             <h6><%= posts.create_at%></h6>
 
             <% if (comments.length>0){ %>
                 <% comments.forEach(comment=>{ %>
-            <div class="card">
+            <div class="">
                 <h2><%= comment.body %></h2>
             </div>
                 <% }) %>

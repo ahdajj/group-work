@@ -10,7 +10,7 @@
     
     <h2>Welcome To Refu'In</h2>
     
-    <a href="/post/addnew"><h3>Add a post</h3></a>
+    <a href="/post/addnew"><h3>If you are <strong>IN</strong> start the journey <div class="In-Posting"><STRong>In-Posting ✍️</STRong></div></h3></a>
     
     <div class="jasem-style">
         <!-- <div class="post-comment"> -->
@@ -19,19 +19,20 @@
                 <% posts.forEach(post=>{ %>
                     <div>
                         <div class="post-comment">
-                            <h2><%=post.UserId.Name %> Post</h2>
-                            <h4><%= post.body %></h4>
-                            <h6><%= post.create_at%></h6>
-                            <a href="/post/<%= post._id %>">See More</a>
+                            <h2><%=post.UserId.Name %> Post <a href="/post/<%= post._id %>">📝</a></h2>
+                            <h4>📰 -<%= post.body %></h4>
+                            <hr>
+                            <h6>⌚️ <%= post.create_at%> </h6>
+                            <!-- See More</a> -->
                 
                         </div>
                    
-                        <div class="post-comment">
-                            <h2>Company Comment</h2>
+                        <div class="comment-comment">
+                            <h2>Company Comment 🗣</h2>
             
                             <% if (post.comment.length>0){ %>
                                 <% post.comment.forEach(comments=>{ %>
-                                <p><%= comments.body %></p>
+                                <h5>👔 <%= comments.body %></h5>
                         </div>    
                     </div>
     

@@ -186,6 +186,9 @@ header a:hover {
     position: relative;
     color: #386650;
   }
+  h2 a{
+    text-decoration: none;
+  }
   /* h2:hover{
     transform: scale(1.22);
     z-index: 1;
@@ -228,6 +231,7 @@ h6{
     padding: 20px 100px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+
 }
 .post-comment:hover{
     transform: scale(1.08);
@@ -237,3 +241,31 @@ h6{
     display: flex;
     flex-direction: row;
 } */
+
+h3 {
+    text-decoration: none;
+    font-family:serif;
+    text-align: center;
+    color:#386650;
+}
+.In-Posting:hover{
+    color: #663a38;
+    transform: scale(1.08);
+    z-index: 1;
+}
+    
+.comment-comment{
+    display: flex;
+    flex-flow: column wrap;
+   justify-content: space-between; 
+   margin: 20px 70px;
+   border:#386650 solid;
+   border-radius: 20px;
+   padding: 20px 100px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 400px;
+}
+
+body a {
+    text-decoration: none;
+}
