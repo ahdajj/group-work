@@ -26,6 +26,9 @@ const aboutPage =(req,res)=>{
 const signupPage =(req,res)=>{
     res.render("signup")
 }
+const signupPageCompany =(req,res)=>{
+    res.render("signup-company")
+}
 const loginPage =(req,res)=>{
     res.render("login" , {err : ''})
 }
@@ -91,5 +94,6 @@ module.exports={
     loginPage,
     creatPost,
     addPost,
-    postDisplay
+    postDisplay,
+    signupPageCompany
 }

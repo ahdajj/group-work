@@ -20,6 +20,8 @@ route.post("/login", userController.logInUser)
 route.post("/addPost", postController.creatPost)
 route.post("/addComment/:id", commentController.creatComment)
 
-route.get("/signup-company",comapnyController.logInAuth, postController.signupPage)
+route.get("/signup-company",comapnyController.logInAuth, postController.signupPageCompany)
+route.post("/signup-company-new", comapnyController.signupCompnay)
+
 route.get("/login" ,comapnyController.logInAuth, postController.loginPage)
 module.exports= route
