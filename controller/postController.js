@@ -1,5 +1,6 @@
 const postModel = require("../models/postModule")
 const Users = require('../models/userModule')
+const commentModel = require('../models/commentModule')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -75,9 +76,9 @@ const postDisplay = (req,res)=>{
     postModel.findById(id)
     .populate('UserId')
     .populate('comment')
-    .sort({created_at :-1})
+    .sort({create_at :-1})
     .then(data =>{
-         //console.log(data[1]);
+      //  console.log(data);
         res.render("PostDisplay",{
             posts:data , comments:data.comment
         })

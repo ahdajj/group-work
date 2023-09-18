@@ -1,4 +1,5 @@
 const Users = require('../models/userModule')
+const Companies = require('../models/companyModule')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -20,8 +21,8 @@ const signupUser =(req,res)=>{
  }
 }
 
-
-const logInUser = (req,res)=>{
+ 
+const logInUser = (req,res)=>{                      // for both users and companies
     Users.findOne({Email:req.body.Email})
       .then(user => {
         if(user !== null){
@@ -41,7 +42,31 @@ const logInUser = (req,res)=>{
             }
 
         }else {
-            res.render('login',{err:'user is not registerd'})
+            Companies.findOne({Email:req.body.Email})
+            .then(company => {
+                if(company !== null){
+                    let correctPass = bcrypt.compareSync(req.body.Password,company.Password);
+                    if (correctPass){
+                        let tokenData= {                               
+                            id:company._id, 
+                            Name: company.Name,
+                            email:company.Email,
+                            comment:company.comment
+                        }
+                        let companyToken=jwt.sign({tokenData},'this is a random text for jwt sign')
+                        res.cookie('jwtc', companyToken)
+                        res.redirect('/home')
+                    }else{
+                        res.render('login' ,{err: 'password is not correct'})
+                    }
+        
+                }else {
+                    res.render('login',{err:'company is not registerd'})
+                }
+              })
+              .catch(err =>{
+                console.log(err)
+              })
         }
       })
       .catch(err =>{
@@ -50,9 +75,10 @@ const logInUser = (req,res)=>{
 }    
 
 
-const logout = (req,res)=>{
-    if(req.cookies.jwt) { 
-    res.clearCookie('jwt');
+const logout = (req,res)=>{                                    // for both users and companies
+    if(req.cookies.jwt ||req.cookies.jwtc ) { 
+    res.clearCookie('jwt')
+    res.clearCookie('jwtc')  
     res.redirect('/home')}
     else {
         res.redirect('/login')
