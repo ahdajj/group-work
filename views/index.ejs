@@ -14,16 +14,32 @@
     <div class="post">
         <% if (posts.length>0){ %>
             <% posts.forEach(post=>{ %>
-        <div class="card">
-            <h2><%=post.name %></h2>
-            <h6><%= post.message %></h6>
+        <div>
+            <h4><%= post.body %></h4>
             <h6><%= post.create_at%></h6>
             <a href="/post/<%= post._id %>">See More</a>
-        </div>
+       
+           
+        <% if (post.comment.length>0){ %>
+            <% post.comment.forEach(comments=>{ %>
+                <div >
+            <p><%= comments.body %></p>
+            </div>
             <% }) %>
+            <%}  %>      
+            <% }) %>
+           
+        </div>
         <%} else {%> 
             <h5>No Post On for Day</h5>
     
         <% } %>
 </body>
+<footer>
+    <hr>
+    <div class="footer-logo">
+        <img src="../media/logo-refuin.png" alt="footer">
+        <p> &copy; 2023 Refu'In copy write , MatrixMaster, Rotterdam , The Netherlands </p>
+    </div>
+</footer>
 </html>

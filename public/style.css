@@ -1,15 +1,223 @@
-.logo{
+/* .logo{
     display: flex;
     justify-content: center;
 }
 .logo img{
 
     height: 60px;
-}
+} */
 body{
-    margin: 10px;
-    background-color: rgba(229, 221, 211, 0.514);
+    margin: 20px;
+    /* background-color: #e5ddd383; */
+    background-image: linear-gradient(to bottom right,#e5ddd383 , rgb(171, 201, 153));
+    
 }
+
 h5{
     text-align: center;
 }
+
+.form{
+    width: 60%;
+    margin: auto;
+}
+.form label ,
+.form input,
+.form textarea {
+    width: 40%;
+    margin: auto;
+    display: block;
+}
+.form button {
+    width: 20%;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    color: blue;
+}
+footer{
+    margin-top: 50%;
+}
+footer img {
+    height: 50px;
+}
+.footer-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* .nav-bar-desgin li, a{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 3%;
+    display: inline-block;
+    position: relative;
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.4s all ease;
+}
+.nav-bar-desgin-li{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 800;
+} */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    margin-right: 20px; 
+
+}
+header ul {
+    list-style: none;
+    display: flex;
+    
+}
+header li{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 3%;
+    display: inline-block;
+    position: relative;
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.4s all ease;
+}
+header li:hover {
+    color: violet;
+    transition: 0.4s all ease;
+}
+header li::after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color:#386650 ;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+header li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+header a {
+    text-decoration: none;
+    color: #386650;
+    font-size: 20px;
+}
+header a:hover {
+    text-decoration: none;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    opacity: 0.4;
+  }
+  
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #060505;
+  }
+  
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+.hamburger.active .bar:nth-child(1) {
+    transform: translate(0px); width: 70px;
+  }
+  
+.hamburger.active .bar:nth-child(3) {
+    transform: translate(0px) ;width: 70px;
+  }
+.hamburger:hover{
+    opacity: 90%;
+
+}
+@media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-menu {
+      display: none;
+       }
+  
+   .nav-menu.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(38, 38, 38, 0.9);
+      padding: 20px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+
+    }
+  
+   .nav-menu li {
+      margin: 10px 0;
+    }
+  }
+
+  h2{
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    color: #386650;
+  }
+  /* h2:hover{
+    transform: scale(1.22);
+    z-index: 1;
+  } */
+  /* .post{
+    justify-content: center;
+  }
+  .post-comment{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    margin: 20px 70px;
+    border:#386650 solid;
+    border-radius: 20px;
+    padding: 20px 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.post-comment:hover{
+    transform: scale(1.08);
+    z-index: 1;
+}
+h6{
+    color: #386650;
+}
+.post-style{
+    margin-top: 50px;
+
+}
+.comment-style{
+    margin-bottom: 50px;
+;
+} */
+

@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("./shared/head") %>
+
+</head>
+<body>
+
+    <form class="form" action="/userInfo" method="post">
+        <label for="firstName">First Name :</label>
+        <input type="text" name="firstName" required>
+        <label for="lastName"> last Name :</label>
+        <input type="text" name="lastName" required>
+        <label for="date">Date of birth</label>
+        <input type="date" name="date">
+        <label for="gender">Gender</label>
+        <select name="gender">
+            <option >male</option>
+            <option>female</option>
+        </select>
+        <input type="checkbox" name="edu" >
+        <button>Save</button>
+    </form>
+</body>
+</html>
