@@ -10,6 +10,15 @@ const userSchema = new Schema({
         type:String,
         required: true
        },
+       Linkedin:{
+        type:String,
+       },
+       Facebook:{
+        type:String,
+       },
+       Instagram:{
+        type:String,
+       },
        Password:{
         type:String,
         required: true
