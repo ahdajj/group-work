@@ -19,6 +19,9 @@ const userSchema = new Schema({
        Instagram:{
         type:String,
        },
+       Bio:{
+        type:String,
+       },
        Password:{
         type:String,
         required: true
