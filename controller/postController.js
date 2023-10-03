@@ -13,29 +13,28 @@ const homePage =(req,res)=>{
     .sort({created_at :-1})
     .then(data =>{
          //console.log(data[1]);
-        res.render("index",{
-            posts:data
-        })
+        res.send(data)
     })
     .catch(err=>{
         console.log(err);
     })
 }
-const aboutPage =(req,res)=>{
-        res.render("about")
-}
-const signupPage =(req,res)=>{
-    res.render("signup")
-}
-const signupPageCompany =(req,res)=>{
-    res.render("signup-company")
-}
-const loginPage =(req,res)=>{
-    res.render("login" , {err : ''})
-}
-const addPost =(req,res)=>{
-    res.render("addNew")
-}
+
+// const aboutPage =(req,res)=>{
+//         res.render("about")
+// }
+// const signupPage =(req,res)=>{
+//     res.render("signup")
+// }
+// const signupPageCompany =(req,res)=>{
+//     res.render("signup-company")
+// }
+// const loginPage =(req,res)=>{
+//     res.render("login" , {err : ''})
+// }
+// const addPost =(req,res)=>{
+//     res.render("addNew")
+// }
 
 const creatPost = (req,res)=>{
     jwt.verify(req.cookies.jwt ,'this is a random text for jwt sign' , function (err , decodedUser){
