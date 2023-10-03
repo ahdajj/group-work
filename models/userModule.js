@@ -10,6 +10,18 @@ const userSchema = new Schema({
         type:String,
         required: true
        },
+       Linkedin:{
+        type:String,
+       },
+       Facebook:{
+        type:String,
+       },
+       Instagram:{
+        type:String,
+       },
+       Bio:{
+        type:String,
+       },
        Password:{
         type:String,
         required: true
@@ -18,6 +30,10 @@ const userSchema = new Schema({
               type:mongoose.Types.ObjectId,           
               ref:'Post'                           
        }],
+       skills: [{
+        name: String,
+        checked: Boolean
+    }]
 
 })
 
